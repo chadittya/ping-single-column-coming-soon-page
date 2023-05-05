@@ -19,7 +19,10 @@ export default function Home() {
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
 
-    if (!validateEmail(email)) {
+    if (!email) {
+      setErrorCopy("Whoops! It looks like you forgot to add your email");
+      setHasErrors(true);
+    } else if (!validateEmail(email)) {
       setErrorCopy("Please Provide a valid email address");
       setHasErrors(true);
     } else {
@@ -65,7 +68,7 @@ export default function Home() {
                 Notify Me
               </button>
               {hasErrors && (
-                <p className="col-span-2 row-start-2 md:text-[12px] text-[11px] italic text-red-500 ml-5">
+                <p className="col-span-2 row-start-2 md:text-[12px] text-[11px] italic text-red-500 md:ml-5 mx-auto">
                   {errorCopy}
                 </p>
               )}
