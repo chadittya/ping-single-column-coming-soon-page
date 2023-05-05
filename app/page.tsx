@@ -34,7 +34,7 @@ export default function Home() {
 
   return (
     <main>
-      <div className="flex flex-col justify-center items-center gap-7 h-screen">
+      <div className="flex flex-col justify-center items-center gap-7 min-h-screen">
         <div>
           <Image src={logo} alt="logo" />
         </div>
